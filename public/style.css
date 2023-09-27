@@ -1,0 +1,11 @@
+.applogo {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+.showcaseImg {
+    margin-left: 10%;
+}
+.alignshowcase {
+    justify-content: space-between;
+}
