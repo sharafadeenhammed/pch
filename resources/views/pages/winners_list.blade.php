@@ -35,7 +35,7 @@
       @foreach ($winners as $winner)
         <tr>
           <td style="lead">{{$winner->name}}</td>
-          <td style="lead">{{number_format($winner->amount)}}</td>
+          <td style="lead">${{number_format($winner->amount)}}</td>
           <td style="lead">{{$winner->delivery_status}}</td>
         </tr>
       @endforeach
