@@ -28,7 +28,7 @@
                   everyday checkout our winners list the link to the
                   page is on the navigation menu alternatively you can
                   check it
-                  <a class="btn btn-primary btn-sm" href="#">here</a>
+                  <a class="btn btn-secondary btn-sm" href="/winners">here</a>
               </div>
           </div>
       </div>
