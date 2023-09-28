@@ -23,12 +23,11 @@
       We value your feedback, inquiries, and suggestions. Please feel free to get in touch with us using the information below, we are always happy to assist you.
     </p>
   </section>
-  
-  <div class="my-5">
-    @include('partials._contact')
-  </div>   
 
-  <form method="POST" action="/contact" class="container ">
+  <div class="container">
+    <p class="h2 text-start text-secondary">Contact Us</p>  
+  </div>
+  <form method="POST" action="/contact" class="container my-5 ">
     @csrf
 
     <div class="mb-3">
@@ -82,6 +81,13 @@
     </button>
 
   </form>
-
+  <div class="container">
+    <p class="h3 text-start text-secondary my-3">
+      You can also contact us using the channels below 
+    </p>
+  </div>
+  <div class="my-2">
+    @include('partials._contact')
+  </div>     
   @include('partials._faq')
   @endsection

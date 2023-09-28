@@ -8,7 +8,7 @@
       <div class="text-center d-flex flex-direction-coloumn align-items-center p-5 my-5 container">
         <div  class="">
           <h1 class="my-3">Congratulations on  <span class="text-warning">winning &#127881;</span> </h1>
-          <p class="lead h4">We're thrilled to have you as a winner in. To ensure a smooth and hassle-free prize claiming process, please follow the steps outlined below.</p>
+          <p class="lead h4">We're thrilled to have you as a winner. To ensure a smooth and hassle-free prize claiming process, please follow the steps outlined below.</p>
   
         </div>
       </div>
@@ -18,11 +18,15 @@
   <section class="container py-5 bg-white">
     <p class="h2 text-start text-secondary my-3">Step 1: Verify Your Identity</p>  
     <p class="lead">
-      Before we can release your prize, we need to confirm your identity to protect your winnings and maintain the integrity of our promotions. Please provide the following information: <br/>
+      Before we can release your prize, we need to confirm your identity to protect your winnings and maintain the integrity of our promotions. Please provide the following information in the form below: <br/>
       Once we receive your information and verify your eligibility, our team will contact you to confirm your prize details, including the prize type, value, and any additional instructions. <br/>
       Please be aware that some prizes may be subject to taxes or other legal obligations. We recommend consulting with a tax professional for guidance on any tax implications associated with your prize.
     </p>
   </section>
+
+  <div class="container">
+    <p class="h2 text-start text-secondary my-1">Winner Verification Form</p>  
+  </div>
 
   <form method="POST" action="/claim" class="container my-3 ">
     @csrf
@@ -120,9 +124,12 @@
   <section class="container py-5 bg-white">
     <p class="h2 text-start text-secondary my-3">Step 2: Contact Us</p>  
     <p class="lead">
+      If you have any questions or need assistance at any point during the prize claiming process, please don't hesitate to contact our Prize Claim Team. We're here to make your experience as a winner enjoyable and hassle-free. <br/>
       Reach out to our dedicated Prize Claim Team through one of the following methods:
     </p>
   </section>
+
+
 
   @include('partials._contact')
   @include('partials._faq')
