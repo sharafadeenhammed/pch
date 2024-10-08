@@ -16,7 +16,7 @@
 
         <nav class="navbar navbar-dark bg-dark py-1 navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="/admin/root/user/pch">
+                <a class="navbar-brand" href="/admin">
                     <img class="applogo img-fluid" src="/pch-icon.png" alt="" />
                 </a>
                 <button
@@ -30,13 +30,16 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/root/user/pch/">Winner's</a>
+                            <a class="nav-link" href="/admin">Winner's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/root/user/pch/contacts">Contact's</a>
+                            <a class="nav-link" href="/admin/contacts">Contact's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin/root/user/pch/claims">Claim's</a>
+                            <a class="nav-link" href="/admin/claims">Claim's</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/logout">Logout</a>
                         </li>
                     </ul>
                 </div>

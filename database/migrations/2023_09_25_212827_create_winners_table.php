@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("name");
-            $table->float("amount");
+            $table->string("amount");
             $table->string("delivery_status");
+        
         });
     }
 

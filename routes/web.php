@@ -35,40 +35,56 @@ Route::prefix("/contact")->group( function () {
     Route::post('/', [Contact::class, "add"]);
 });
 
-Route::prefix("/admin/root/user/pch/claims")->group(function(){
-    Route::get("/", [Claim::class, "getClaims"] );
 
-    Route::get("/{claim}", [Claim::class, "get"]);
+
+// admin area
+
+Route::prefix("/admin/claims")->group(function(){
+    Route::get("/", [Claim::class, "getClaims"] )->middleware("auth");
+
+    Route::get("/{claim}", [Claim::class, "get"])->middleware("auth");
     
-    Route::delete("/{claim}", [Claim::class, "remove"]);
+    Route::delete("/{claim}", [Claim::class, "remove"])->middleware("auth");
 
 });
 
 
 
 
-Route::get("/admin/root/user/pch/",[Admin::class, "home"]);
+Route::get("/home",function(){
+    return redirect("/admin/dashboard");
+});
 
-Route::prefix("/admin/root/user/pch/contacts")->group(function(){
-    Route::get("/", [Contact::class, "getContacts"] );
 
-    Route::get("/{contact}", [Contact::class, "get"]);
+Route::prefix("/admin")->group( function(){
+    Route::get("/",[Admin::class, "loginPage"])->name("login")->middleware("guest");
+    Route::post("/login", [Admin::class, "login"]);
+    Route::get("/logout", [Admin::class, "logout"])->middleware("auth");
+    Route::get("/dashboard", [Admin::class, "home"])->middleware("auth");
+});
+
+Route::prefix("/admin/contacts")->group(function(){
+    Route::get("/", [Contact::class, "getContacts"] )->middleware("auth");
+
+    Route::get("/{contact}", [Contact::class, "get"])->middleware("auth");
     
-    Route::delete("/{contact}", [Contact::class, "remove"]);
+    Route::delete("/{contact}", [Contact::class, "remove"])->middleware("auth");
 
 });
 
-Route::view("/admin/root/user/pch/add/winner", "admin.add_winner");
+// Route::view("/admin/winner", "admin.add_winner");
 
-Route::prefix("/admin/root/user/pch/winners")->group(
+Route::prefix("/admin/winners")->group(
     function (){
-        Route::get('/{winner}', [Winners::class, "show"]);
+        Route::view("/", "admin.add_winner")->middleware("auth");
 
-        Route::put('/{winner}', [Winners::class, "update"]);
+        Route::get('/{winner}', [Winners::class, "show"])->middleware("auth");
+
+        Route::put('/{winner}', [Winners::class, "update"])->middleware("auth");
     
-        Route::post('/', [Winners::class, "store"]);
+        Route::post('/', [Winners::class, "store"])->middleware("auth");
     
-        Route::delete('/{winner}', [Winners::class, "remove"] );
+        Route::delete('/{winner}', [Winners::class, "remove"] )->middleware("auth");
     
     }
 );

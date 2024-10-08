@@ -19,7 +19,7 @@ class winners extends Controller
     static public function store(){
         $form = request()->validate([
             "name" => "required",
-            "amount" => ["numeric", "required"],
+            "amount" =>  "required",
             "delivery_status" => "required"
            ]);
         WinnersModel::create($form);
@@ -34,7 +34,7 @@ class winners extends Controller
     static public function update(WinnersModel $winner){
        $form = request()->validate([
         "name" => "required",
-        "amount" => ["numeric", "required"],
+        "amount" =>  "required",
         "delivery_status" => "required"
        ]);
     

@@ -17,7 +17,7 @@
 
   <div class="mb-3">
     <label for="amount" class="form-label">Amount</label>
-    <input value="{{old("amount")}}" id="amount" name="amount" type="text" class="form-control">
+    <input value="{{old("amount")}}" id="amount" name="amount" type="number" class="form-control">
     @error('amount')
       <p class="text-danger fw-bold">  
         {{$message}}
